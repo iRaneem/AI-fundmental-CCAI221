@@ -1,0 +1,27 @@
+%task1
+father(ali,salem).
+father(ahmad,ibrahim).
+father(ahmad,zaynab).
+evrybody:- 
+    father(X,Y),
+    write(X),write(" is "),
+    write(Y),write("'s father"),nl,fail.
+    %task2
+action(1):-nl,write("N=1"),nl.
+action(2):-nl,write("N=2"),nl.
+action(3):-nl,write("N=3"),nl.
+action(N):-nl,N>1,N<1,N>2,N<2,N>3,N<3,write("N=?"),nl.
+write("Type a number from 1 to 3"),read(N),action(N).
+%task3
+action(1):-!,nl,write("N=1"),nl.
+action(2):-!,nl,write("N=2"),nl.
+action(3):-!,nl,write("N=3"),nl.
+action(X):-X>5,X<9,!,write("5<N<9"),nl.
+action(_):-nl,write("unknown number ?"),nl. 
+write("Type a number from 1 to 3"),read(N),action(N).
+%task4 
+classify(X,pos):-X>0.
+classify(X,neg):-X<0.
+classify(X,zero):-X=0.
+classify ( 5,What).classify (-4,What). classify (0,What).classify(X,What).
+
